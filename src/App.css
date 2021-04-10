@@ -1,38 +1,53 @@
 .App {
+  font-family: "Architects Daughter", cursive;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.searchBar {
+  width: 250px;
+  border-radius: 5px;
+  font-size: 1rem;
+  padding: 3px;
+  margin: 1px;
+  line-height: 1.5rem;
+  background: linear-gradient(90deg, #e7f2f5 0%, rgba(184, 186, 188, 0.5) 80%);
+  box-shadow: 1px 4px 14px 0px rgba(134, 137, 139, 0.75);
+  font-family: "Architects Daughter", cursive;
+}
+.searchButton {
+  font-size: 1rem;
+  padding: 3px;
+  border-radius: 5px;
+  box-shadow: 1px 4px 14px 0px rgba(134, 137, 139, 0.75);
+  background: radial-gradient(
+    circle farthest-corner at center center,
+    #e7f2f5 0%,
+    #b8babc 80%
+  );
+  font-family: "Architects Daughter", cursive;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.weatherList {
+  list-style: none;
+  margin: 0 auto;
+  padding: 0;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.city {
+  font-size: 2rem;
+  text-decoration: underline;
+  font-weight: 900;
+  line-height: 3rem;
 }
 
-.App-link {
-  color: #61dafb;
+.city,
+.temp,
+.reality,
+.whoosh,
+.justLies {
+  margin-bottom: 3px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.justLies {
+  text-transform: capitalize;
 }
