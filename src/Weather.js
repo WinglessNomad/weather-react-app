@@ -17,7 +17,7 @@ export default function Weather() {
             <li className="city">{city}</li>
             <li className="temp">Temperature: {Math.round(temperature)} °C</li>
             <li className="reality">Feels like: {Math.round(realFeel)} °C</li>
-            <li className="whoosh"> Blowing {wind} km/h </li>
+            <li className="whoosh"> Blowing {Math.round(wind)} km/h </li>
             <li className="justLies">{description}</li>
             <li className="icon">
               {" "}
