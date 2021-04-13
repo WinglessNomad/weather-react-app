@@ -1,73 +1,58 @@
 import React, { useState } from "react";
 import axios from "axios";
+import CurrentWeather from "./CurrentWeather";
 
-export default function Weather() {
-    const [city, setCity] = useState("");
-    const [temperature, setTemperature] = useState(null);
-    const [realFeel, setRealFeel] = useState(null);
-    const [wind, setWind] = useState(null);
-    const [description, setDescription] = useState(null);
-    const [icon, setIcon] = useState(null);
+export default function Weather(props) {
+    const [weather, setWeather] = useState({show: false});
+    const [city, setCity] = useState(props.default);
+
+    function getResponses(response) {
+      setWeather({
+        show: true,
+        city: response.data.name,
+        temperature: response.data.main.temp,
+        description: response.data.weather[0].description,
+        realFeel: response.data.main.feels_like,
+        wind: response.data.wind.speed,
+        icon: response.data.weather[0].icon
+      });
+    }
 
     function showWeather() {
-    if (temperature) {
-      return (
-        <div>
-          <ul className="weatherList">
-            <li className="city">{city}</li>
-            <li className="temp">Temperature: {Math.round(temperature)} °C</li>
-            <li className="reality">Feels like: {Math.round(realFeel)} °C</li>
-            <li className="whoosh"> Blowing {Math.round(wind)} km/h </li>
-            <li className="justLies">{description}</li>
-            <li className="icon">
-              {" "}
-              <img src={icon} alt={description} />{" "}
-            </li>
-          </ul>
-          
-        </div>
-      );
-    }
-  }
-
-  function updateCity(event) {
-    setCity(event.target.value);
-  }
-
-  function getResponses(response) {
-    setTemperature(response.data.main.temp);
-    setDescription(response.data.weather[0].description);
-    setRealFeel(response.data.main.feels_like);
-    setWind(response.data.wind.speed);
-    setIcon(
-      `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
-    );
-  }
-
-  function handleSubmit(event) {
-    event.preventDefault();
-    let apiKey = "bbc514bdb7c36a278a6660e973fff2d4";
+    let apiKey = "42e97aa1960c10d8826372a5ee85406c";
     let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
     axios.get(url).then(getResponses);
-  }
+    }
 
-  return (
-    <div>
-      <div>
-        <h2 className="title"> Weather App </h2>
-        <form onSubmit={handleSubmit} className="form">
-          <input
-            type="search"
-            onChange={updateCity}
-            placeholder="What's the weather like in..."
-            className="searchBar"
-          />
-          <input type="submit" value="Search" className="searchButton" />
-        </form>
-      </div>
-      <div> {showWeather()} </div>
-    </div>
-  );
-     
+    function updateCity(event) {
+    setCity(event.target.value);
+    }
 
+    function handleSubmit(event) {
+    event.preventDefault();
+    showWeather();
+    }
+
+    if(weather.show) {
+      return (
+        <div>
+          <div>
+            <h2 className="title"> Weather App </h2>
+            <form onSubmit={handleSubmit} className="form">
+             <input
+                type="search"
+                onChange={updateCity}
+                placeholder="What's the weather like in..."
+                className="searchBar"
+             />
+             <input type="submit" value="Search" className="searchButton" />
+           </form>
+          </div>
+         <div> <CurrentWeather data={weather} /> </div>
+       </div>
+     );
+    } else {
+        showWeather();
+        return "Loading weather conditions...";
+        }
 }
