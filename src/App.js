@@ -1,10 +1,30 @@
 import Weather from "./Weather";
-import './App.css';
+import "./App.css";
 
 function App() {
   return (
-    <div className="App">
-      <Weather default="Zagreb" />
+    <div>
+      <div className="App">
+        <Weather default="Zagreb" />
+      </div>
+      <footer>
+        <div class="code-link">
+          <p>
+            <a
+              href="https://github.com/WinglessNomad/weather-react-app"
+              class="cl"
+              target="_blank"
+            >
+              Open-source code
+            </a>
+            for
+            <a href="https://www.shecodes.io/" class="cl" target="_blank">
+              SheCodes
+            </a>
+            by Nina B
+          </p>
+        </div>
+      </footer>
     </div>
   );
 }
