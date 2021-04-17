@@ -1,10 +1,18 @@
 {
     "emmet.includeLanguages": {
-        "javascript": "javascriptreact"
+        "javascript": "javascriptreact",
+        "css": "cssreact"
     },
     "emmet.excludeLanguages": [
+
+
         
 
         "markdown"
-    ]
+    ],
+    "emmet.preferences": {
+    
+    },
+    "emmet.showSuggestionsAsSnippets": true,
+    "emmet.triggerExpansionOnTab": true
 }
