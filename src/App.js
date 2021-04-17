@@ -14,6 +14,7 @@ function App() {
               href="https://github.com/WinglessNomad/weather-react-app"
               class="cl"
               target="_blank"
+              rel="noreferrer"
             >
               Open-source code
             </a>
