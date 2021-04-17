@@ -18,7 +18,7 @@ function App() {
               Open-source code
             </a>
             for
-            <a href="https://www.shecodes.io/" class="cl" target="_blank">
+            <a href="https://www.shecodes.io/" class="cl" rel="noreferrer">
               SheCodes
             </a>
             by Nina B
