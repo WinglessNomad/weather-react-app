@@ -16,10 +16,10 @@ function App() {
               rel="noreferrer"
             >
               Open-source code
-            </a>
-            for
+            </a>{" "}
+            for{" "}
             <a href="https://www.shecodes.io/" class="cl" rel="noreferrer">
-              SheCodes
+              SheCodes{" "}
             </a>
             by Nina B
           </p>
