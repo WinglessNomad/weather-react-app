@@ -16,11 +16,13 @@
   height: 100vh;
 }
 .code-link {
+  font-family: "Architects Daughter", cursive;
   text-align: center;
   color: rgb(34, 43, 43);
 }
 
 .cl {
+  font-family: "Architects Daughter", cursive;
   text-decoration: none;
   color: rgb(34, 43, 43);
 }
