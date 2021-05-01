@@ -12,8 +12,6 @@
     rgba(85, 148, 179, 1) 0%,
     rgba(136, 162, 187, 1) 100%
   );
-  width: 50vw;
-  height: 100vh;
 }
 .code-link {
   font-family: "Architects Daughter", cursive;

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import CurrentWeather from "./CurrentWeather";
+import Forecast from "./Forecast";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearchLocation } from "@fortawesome/free-solid-svg-icons";
 import "./Weather.scss";
@@ -12,6 +13,7 @@ export default function Weather(props) {
   function getResponses(response) {
     setWeather({
       show: true,
+      coordinates: response.data.coord,
       city: response.data.name,
       date: new Date(response.data.dt * 1000),
       temperature: response.data.main.temp,
@@ -61,6 +63,9 @@ export default function Weather(props) {
         <div>
           {" "}
           <CurrentWeather data={weather} />{" "}
+        </div>
+        <div>
+          <Forecast coordinates={weather.coordinates} />
         </div>
       </div>
     );

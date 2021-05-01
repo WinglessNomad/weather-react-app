@@ -21,6 +21,10 @@ function App() {
             <a href="https://www.shecodes.io/" class="cl" rel="noreferrer">
               SheCodes{" "}
             </a>
+            hosted on{" "}
+            <a href="https://www.netlify.com/" class="cl" rel="noreferrer">
+              Netlify{" "}
+            </a>
             by Nina B
           </p>
         </div>
