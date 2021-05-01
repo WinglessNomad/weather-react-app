@@ -13,16 +13,27 @@ function App() {
             <a
               href="https://github.com/WinglessNomad/weather-react-app"
               class="cl"
-              rel="noreferrer"
+              rel="noopener noreferrer"
+              target="_blank"
             >
               Open-source code
             </a>{" "}
             for{" "}
-            <a href="https://www.shecodes.io/" class="cl" rel="noreferrer">
+            <a
+              href="https://www.shecodes.io/"
+              class="cl"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
               SheCodes{" "}
             </a>
             hosted on{" "}
-            <a href="https://www.netlify.com/" class="cl" rel="noreferrer">
+            <a
+              href="https://www.netlify.com/"
+              class="cl"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
               Netlify{" "}
             </a>
             by Nina B
